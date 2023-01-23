@@ -10,7 +10,7 @@ terraform {
     resource_group_name  = "ws-devops"
     storage_account_name = "cgmsgtf"
     container_name       = "tfstateazdevops"
-    key                  = "<your unique prefix>.tfstate"
+    key                  = "sgr47.tfstate"
   }
 }
 
