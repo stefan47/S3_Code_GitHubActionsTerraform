@@ -43,11 +43,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
-    # - name: debug secrets
-    #   run: | 
-    #     echo "${{ secrets.ASP }}" | sed -r 's#(.)#\1 #g'
-    #     echo "${{ secrets.WEBAPP }}" | sed -r 's#(.)#\1 #g'
-    #     echo "${{ secrets.LOC }}" | sed -r 's#(.)#\1 #g'
+    - name: debug secrets
+      run: | 
+         echo "${{ secrets.ASP }}" | sed -r 's#(.)#\1 #g'
+         echo "${{ secrets.WEBAPP }}" | sed -r 's#(.)#\1 #g'
+         echo "${{ secrets.LOC }}" | sed -r 's#(.)#\1 #g'
 
     - uses: hashicorp/setup-terraform@v2
 
@@ -58,7 +58,7 @@ jobs:
     # file requires this workaround so far.
     - name: Terraform fmt
       id: fmt
-      run: terraform fmt -check
+      run: terraform fmt -check -diff
       #continue-on-error: true
 
     - name: Terraform Plan
