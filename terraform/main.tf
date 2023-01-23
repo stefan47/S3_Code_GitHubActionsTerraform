@@ -108,7 +108,7 @@ data "template_file" "dash-template" {
 }
   
   resource "azurerm_dashboard" "my-board" {
-  name                = "sgr4783-dashboard"
+  name                = "asdf-dashboard"
   resource_group_name = data.azurerm_resource_group.wsdevops.name
   location            = data.azurerm_resource_group.wsdevops.location
   tags = {
